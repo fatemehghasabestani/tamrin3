@@ -1,0 +1,29 @@
+.primary{
+    background-color:pink;
+    color: rgb(5, 5, 5);
+    pad: 0.2em 0.5em;
+    border-radius: 0.3em;
+    border: none;
+    margin: 0.1em;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    th{
+        background-color:pink;
+        color: white;
+        text-align: right;
+    }
+    th,td{
+        padding: 0.2em; ;
+    }
+    th{
+          border-top: 1px solid rgb(69, 66, 66);
+    }
+    tr{
+        border-bottom: 1px solid  rgb(69, 66, 66) ;
+    }
+    tr:nth-of-type(2n+1){
+        background-color: rgb(192, 191, 191);
+    }
+}
