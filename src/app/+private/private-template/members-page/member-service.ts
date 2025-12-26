@@ -18,4 +18,22 @@ export class MemberService {
     add(item:MembersItem){
       this.data.push(item);
     }
+    edit(item:MembersItem){
+      const index = this.data.findIndex(b => b.id == item.id);
+    if (index != -1) {
+      this.data[index].firstname= item.firstname;
+      this.data[index].lastname = item.lastname
+      this.data[index].nationalid= item.nationalid;
+      this.data[index].gender= item.gender;
+      this.data[index].mobilenumber= item.mobilenumber;
+      this.data[index].address= item.address;
+      this.data[index].membershiptype= item.membershiptype;
+    }
+  }
+   remove(item:MembersItem){
+      const index = this.data.findIndex(b => b.id == item.id);
+    if (index != -1) {
+       this.data=this.data.filter(b=>b.id!=item.id);
+    }
+  }
 }

@@ -10,21 +10,27 @@ import { FormsModule } from '@angular/forms';
 })
 export class MembersPage implements OnInit {
   save() {
+    if (this.state == 'add') {
       this.memberService.add(this.item);
-   this.dataRefresh();
-   this.state='list';
-
+    }else if (this.state == 'edit') {
+      this.memberService.edit(this.item);
+    }else if (this.state == 'remove') {
+      this.memberService.remove(this.item);
+    }
+    
+    this.dataRefresh();
+    this.state = 'list';
   }
   ngOnInit(): void {
     this.dataRefresh();
   }
   data: MembersItem[] = [];
-  item:MembersItem={
-    firstname:'',
-    lastname:'',
-    gender:'',
-    address:'',
-    membershiptype:'',
+  item: MembersItem = {
+    firstname: '',
+    lastname: '',
+    gender: '',
+    address: '',
+    membershiptype: '',
   };
   memberService = inject(MemberService);
   state: string = 'list';
@@ -33,18 +39,35 @@ export class MembersPage implements OnInit {
   }
 
   add() {
-   this.state='add';
-   this.item={
-    firstname:'',
-    lastname:'',
-    gender:'',
-    address:'',
-    membershiptype:'',
-   };
-  
+    this.state = 'add';
+    this.item = {
+      firstname: '',
+      lastname: '',
+      gender: '',
+      address: '',
+      membershiptype: '',
+    };
+
   }
-  cancel(){
-    this.state='list';
+  edit(member: MembersItem) {
+    this.item = { ...member };
+    this.state = 'edit';
+  }
+   remove(member:MembersItem){
+        this.item = { ...member };
+          this.state = 'remove';
+   this.item = {
+      firstname: '',
+      lastname: '',
+      gender: '',
+      address: '',
+      membershiptype: '',
+    };
+     
+  
+    }
+  cancel() {
+    this.state = 'list';
   }
 }
 export interface MembersItem {

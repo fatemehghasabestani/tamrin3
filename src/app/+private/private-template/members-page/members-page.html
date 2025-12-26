@@ -25,38 +25,43 @@
             <td>{{item.mobilenumber}}</td>
             <td>{{item.address}}</td>
             <td>{{item.membershiptype}}</td>
-            <button class="primary">ویرایش</button>
-            <button class="primary">حذف</button>
+            <button (click)="edit(item)" class="primary">ویرایش</button>
+            <button (click)="remove(item)" class="primary">حذف</button>
         </tr>
         }
     </tbody>
 </table>
 }
 @else {
+    @if (state=='remove') {
+    <div class="alert">
+        ایا از حذف این کتاب اطمینان دارید؟
+    </div>
+}
 <form (ngSubmit)="save()">
-    <div>
-        <input [(ngModel)]="item.id" id="id" name="id" type="number" placeholder="شناسه">
+    <div >
+        <input  [disabled]="state=='edit' || state=='remove'" [class.ghofl]="state=='edit'"  [(ngModel)]="item.id" id="id" name="id" type="number" placeholder="شناسه">
     </div>
     <div>
-        <input [(ngModel)]="item.firstname" id="firstname" name="firstname" type="text" placeholder="نام">
+        <input [disabled]="state=='remove'"  [(ngModel)]="item.firstname" id="firstname" name="firstname" type="text" placeholder="نام">
     </div>
     <div>
-        <input [(ngModel)]="item.lastname" id="lastname" name="lastname" type="text" placeholder="نام خانوادگی">
+        <input [disabled]="state=='remove'"  [(ngModel)]="item.lastname" id="lastname" name="lastname" type="text" placeholder="نام خانوادگی">
     </div>
     <div>
-        <input [(ngModel)]="item.nationalid" id="nationalid" name="nationalid" type="number" placeholder="کدملی">
+        <input [disabled]="state=='remove'"  [(ngModel)]="item.nationalid" id="nationalid" name="nationalid" type="number" placeholder="کدملی">
     </div>
     <div>
-        <input [(ngModel)]="item.gender" id="gender" name="gender" type="text" placeholder="جنسیت">
+        <input [disabled]="state=='remove'"  [(ngModel)]="item.gender" id="gender" name="gender" type="text" placeholder="جنسیت">
     </div>
     <div>
-        <input [(ngModel)]="item.mobilenumber" id="mobilenumber" name="mobilenumber" type="number" placeholder="شماره تلفن">
+        <input [disabled]="state=='remove'"  [(ngModel)]="item.mobilenumber" id="mobilenumber" name="mobilenumber" type="number" placeholder="شماره تلفن">
     </div>
     <div>
-        <input [(ngModel)]="item.address" id="address" name="address" type="text" placeholder="آدرس">
+        <input [disabled]="state=='remove'"  [(ngModel)]="item.address" id="address" name="address" type="text" placeholder="آدرس">
     </div>
     <div>
-        <input [(ngModel)]="item.membershiptype" id="membershiptype" name="membershiptype" type="text" placeholder="نوع عضویت">
+        <input [disabled]="state=='remove'"  [(ngModel)]="item.membershiptype" id="membershiptype" name="membershiptype" type="text" placeholder="نوع عضویت">
     </div>
     <div>
         <button class="primary" type="submit" >تایید</button>
