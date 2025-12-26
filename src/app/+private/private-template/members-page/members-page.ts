@@ -20,12 +20,9 @@ export class MembersPage implements OnInit {
   }
   data: MembersItem[] = [];
   item:MembersItem={
-    id:0,
     firstname:'',
     lastname:'',
-    nationalid:0,
     gender:'',
-    mobilenumber:0,
     address:'',
     membershiptype:'',
   };
@@ -37,6 +34,13 @@ export class MembersPage implements OnInit {
 
   add() {
    this.state='add';
+   this.item={
+    firstname:'',
+    lastname:'',
+    gender:'',
+    address:'',
+    membershiptype:'',
+   };
   
   }
   cancel(){
@@ -44,12 +48,12 @@ export class MembersPage implements OnInit {
   }
 }
 export interface MembersItem {
-  id: number;
+  id?: number;
   firstname: string;
   lastname: string;
-  nationalid: number;
+  nationalid?: number;
   gender: string;
-  mobilenumber: number;
+  mobilenumber?: number;
   address: string;
   membershiptype: string;
 

@@ -39,7 +39,6 @@ export class BooksPage implements OnInit {
 
   add() {
     this.state = 'add';
-<<<<<<< HEAD
     this.item = {
       title: '',
       writer: '',
@@ -54,17 +53,13 @@ export class BooksPage implements OnInit {
   remove(book:BookItem){
       this.item = { ...book };
         this.state = 'remove';
-=======
+
     this.item={
     title: '',
     writer: '',
     publisher: ''
     };
-  
->>>>>>> bff4796b189294494ba62ad9fc65a138d758a586
-  }
-  edit(){
-    this.state='edit';
+
   }
   cancel() {
     this.state = 'list';
@@ -72,11 +67,8 @@ export class BooksPage implements OnInit {
 
 }
 export interface BookItem {
-<<<<<<< HEAD
+
   id?: number;
-=======
-  id?: number ;
->>>>>>> bff4796b189294494ba62ad9fc65a138d758a586
   title: string;
   writer: string;
   publisher: string;
