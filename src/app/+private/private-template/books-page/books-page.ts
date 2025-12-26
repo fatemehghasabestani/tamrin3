@@ -19,10 +19,8 @@ export class BooksPage implements OnInit {
   }
   data: BookItem[] = [];
   item: BookItem = {
-    id: 0,
     title: '',
     writer: '',
-    price: 0,
     publisher: ''
   }
   booksService = inject(BooksService);
@@ -35,7 +33,15 @@ export class BooksPage implements OnInit {
 
   add() {
     this.state = 'add';
+    this.item={
+    title: '',
+    writer: '',
+    publisher: ''
+    };
   
+  }
+  edit(){
+    this.state='edit';
   }
   cancel() {
     this.state = 'list';
@@ -43,9 +49,9 @@ export class BooksPage implements OnInit {
 
 }
 export interface BookItem {
-  id: number;
+  id?: number ;
   title: string;
   writer: string;
   publisher: string;
-  price: number;
+  price?: number;
 }
