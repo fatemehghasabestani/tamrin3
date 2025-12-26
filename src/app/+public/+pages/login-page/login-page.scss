@@ -1,0 +1,24 @@
+.login{
+    background-color: pink;
+    height: 250px;
+    width: 40%;
+    box-shadow: 0 7px 25px;
+    border-radius: 50px;
+    margin: 100px 25% 100px 25%;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+button{
+    background-color: rgb(170, 167, 167);
+    color: white;
+} 
+form{
+    padding:10px ;
+    margin:10px;
+    gap: 5px;
+}
+label{
+    display: block;
+    gap: 10px;
+    margin-bottom: 10px;
+}
