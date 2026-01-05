@@ -31,8 +31,8 @@ export class BooksPage extends BaseCrudPage<BookItem> implements OnInit {
   booksColumns:column[]=[
     {field:'id',title:'شناسه'},
     {field:'title',title:'عنوان'},
-    {field:' writer',title:'نویسنده'},
-     {field:' publisher',title:'ناشر'},
+    {field:'writer',title:'نویسنده'},
+     {field:'publisher',title:'ناشر'},
     {field:'price',title:'قیمت'},
   ]
 

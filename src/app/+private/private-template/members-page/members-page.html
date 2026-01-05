@@ -5,7 +5,7 @@
    (onCancel)="cancel()"
     (onEdit)="edit($event)"
      (onRemove)="remove($event)"
-      (onSave)="save"
+      (onSave)="save()"
       >
      <div>
         <input [disabled]="state=='edit' || state=='remove'" [class.ghofl]="state=='edit'" [(ngModel)]="item.id" id="id"

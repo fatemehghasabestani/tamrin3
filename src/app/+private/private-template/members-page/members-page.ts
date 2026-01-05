@@ -34,12 +34,12 @@ export class MembersPage extends BaseCrudPage<MembersItem> implements OnInit {
   membersColumns:column[]=[
     { field: 'id', title: 'شناسه' },
     { field: 'firstname', title: 'نام' },
-    { field: ' lastname', title: 'نام خانوادگی' },
-    { field: '  nationalid', title: 'کدملی' },
-    { field: ' gender', title: 'جنسیت' },
-    { field: ' mobilenumber', title: 'شماره موبایل' },
+    { field: 'lastname', title: 'نام خانوادگی' },
+    { field: 'nationalid', title: 'کدملی' },
+    { field: 'gender', title: 'جنسیت' },
+    { field: 'mobilenumber', title: 'شماره موبایل' },
     { field: 'address', title: 'ادرس' },
-    { field: ' membershiptype', title: 'نوع عضویت' },
+    { field: 'membershiptype', title: 'نوع عضویت' },
 
   ]
 }

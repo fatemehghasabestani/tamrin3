@@ -5,16 +5,16 @@
 <table>
     <thead>
         <tr>
-            @for (item of columns;track $index){
-              <th>{{item.title}}</th>
+            @for (col of columns;track col.field){
+              <th>{{col.title}}</th>
             }
            <th></th>
         </tr>
     </thead>
     <tbody>
-        @for(item of mydata; track $index){
+        @for(item of mydata; track item.id){
         <tr>
-           @for(col of columns; track  $index){
+           @for(col of columns; track  col.field){
             <td>{{item[col.field]}}</td>
            }
             <td>
@@ -26,12 +26,13 @@
     </tbody>
 </table>
 }
+
 @else {
 <form (ngSubmit)="onSave.emit()">
     <ng-content></ng-content>
     <div>
         <button class="primary" (click)="onSave.emit()" type="button">تایید</button>
-        <button  (click)="onCancel.emit " type=" button ">انصراف</button>
+        <button type=" button "   (click)= "onCancel.emit ">انصراف</button>
     </div>
 </form>
 }
